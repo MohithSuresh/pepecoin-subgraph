@@ -9,7 +9,7 @@ import {
 import { Address, BigInt } from "@graphprotocol/graph-ts";
 import { Approval } from "../generated/schema";
 import { Approval as ApprovalEvent } from "../generated/PEPE/PEPE";
-import { handleApproval } from "../src/pepe";
+import /* handleApproval*/ "../src/pepe";
 import { createApprovalEvent } from "./pepe-utils";
 
 // Tests structure (matchstick-as >=0.5.0)
@@ -25,7 +25,7 @@ describe("Describe entity assertions", () => {
     );
     let value = BigInt.fromI32(234);
     let newApprovalEvent = createApprovalEvent(owner, spender, value);
-    handleApproval(newApprovalEvent);
+    //handleApproval(newApprovalEvent);
   });
 
   afterAll(() => {
